@@ -1,39 +1,56 @@
-<fieldset>
+<div class="div">
   <form [formGroup]="formulario" fxLayoutAlign="center" novalidate>
-    <mat-list>
-      <mat-list-item fxLayoutAlign="center">
-        <mat-form-field appearance="fill">
+    <fieldset>
+      <legend style="color: antiquewhite">{{ title }}</legend>
+      <!-- início da lista -->
+      <mat-list>
+        <!-- início do primeiro item da lista -->
+        <mat-list-item style="margin-top: 20px">
+          <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email" formControlName="email" />
-        </mat-form-field>
-    </mat-list-item>
-    <mat-list-item fxLayoutAlign="center">
-        <mat-form-field appearance="fill">
+          </mat-form-field>
+        </mat-list-item>
+        <!-- final do primeiro item da lista -->
+
+        <!-- início do segundo item da lista -->
+        <mat-list-item style="margin-top: 20px">
+          <mat-form-field class="example-full-width">
             <mat-label>Senha</mat-label>
-          <input matInput placeholder="Senha" formControlName="senha" />
-        </mat-form-field>
-        <span matTooltip="Senha deve conter no mínimo 6 caracteres">
-          <!-- <mat-icon>help</mat-icon> -->
-        </span>
-      </mat-list-item>
-      <mat-list-item fxLayoutAlign="center">
-        <button
-          mat-raised-button
-          color="primary"
-          [disabled]="formulario.invalid"
-          (click)="logarSistema()"
-        >
-          Entrar
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <a mat-button color="primary" routerLink="/cadastro-pf">
-          Cadastrar Pessoa Física
-        </a>
-        <a mat-button color="primary" routerLink="/cadastro-pj">
-          Cadastrar Pessoa Jurídica
-        </a>
-      </mat-list-item>
-    </mat-list>
+            <input matInput placeholder="Senha" formControlName="senha" />
+          </mat-form-field>
+          <span matTooltip="Senha deve conter no mínimo 6 caracteres">
+            <!-- <mat-icon>help</mat-icon> -->
+          </span>
+        </mat-list-item>
+        <!-- final do segundo item da lista -->
+
+        <!-- botão entrar -->
+        <mat-list-item fxLayoutAlign="center">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="formulario.invalid"
+            (click)="logarSistema()"
+          >
+            Entrar
+          </button>
+        </mat-list-item>
+        <!-- final do botão entrar -->
+
+        <!-- botão link pessoa física -->
+        <mat-list-item>
+          <a mat-button routerLink="/cadastro-pf" style="color: #808080;">
+            Cadastrar Pessoa Física
+          </a>
+
+          <!-- botão link pessoa jurídica -->
+          <a mat-button routerLink="/cadastro-pj" style="color: #808080;">
+            Cadastrar Pessoa Jurídica
+          </a>
+        </mat-list-item>
+      </mat-list>
+      <!-- fim da lista completa de itens -->
+    </fieldset>
   </form>
-</fieldset>
+</div>
