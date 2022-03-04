@@ -1,0 +1,39 @@
+<fieldset>
+  <form [formGroup]="formulario" fxLayoutAlign="center" novalidate>
+    <mat-list>
+      <mat-list-item fxLayoutAlign="center">
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" />
+        </mat-form-field>
+    </mat-list-item>
+    <mat-list-item fxLayoutAlign="center">
+        <mat-form-field appearance="fill">
+            <mat-label>Senha</mat-label>
+          <input matInput placeholder="Senha" formControlName="senha" />
+        </mat-form-field>
+        <span matTooltip="Senha deve conter no mínimo 6 caracteres">
+          <!-- <mat-icon>help</mat-icon> -->
+        </span>
+      </mat-list-item>
+      <mat-list-item fxLayoutAlign="center">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="formulario.invalid"
+          (click)="logarSistema()"
+        >
+          Entrar
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <a mat-button color="primary" routerLink="/cadastro-pf">
+          Cadastrar Pessoa Física
+        </a>
+        <a mat-button color="primary" routerLink="/cadastro-pj">
+          Cadastrar Pessoa Jurídica
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </form>
+</fieldset>
